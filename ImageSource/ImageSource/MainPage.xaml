@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ImageSource"
+             x:Class="ImageSource.MainPage">
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="image" Source="https://placeimg.com/1920/1080/any/1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></Image>
+        <ActivityIndicator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Color="Black" IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"/>
+        <Button x:Name="BtnPrevious" Grid.Row="1" Grid.Column="0" Image="left.png" Text="Previous" Clicked="BtnPrevious_OnClicked" BackgroundColor="Transparent" BorderColor="Transparent"/>
+        <Button x:Name="BtnNext" Grid.Row="1" Grid.Column="2" Image="right.png" Text="Next" Clicked="BtnNext_OnClicked" BackgroundColor="Transparent" BorderColor="Transparent"/>
+        
+
+        <!--<Image>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding}" />
+            </Image.GestureRecognizers>
+        </Image>-->
+    </Grid>
+
+</ContentPage>
